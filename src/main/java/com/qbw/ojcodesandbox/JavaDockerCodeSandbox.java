@@ -42,7 +42,7 @@ public class JavaDockerCodeSandbox implements CodeSandbox{
 
     private static final String SECURITY_MANAGER_CLASS_NAME = "MySecurityManager";
 
-    private static final Boolean FIRST_INIT = true;
+    private static Boolean FIRST_INIT = true;
 
     @Override
     public ExecuteCodeResponse executeCode(ExecuteCodeRequest executeCodeRequest) {
@@ -94,6 +94,7 @@ public class JavaDockerCodeSandbox implements CodeSandbox{
             try {
                 pullImageCmd.exec(pullImageResultCallback)
                         .awaitCompletion();
+                FIRST_INIT = false;
             } catch (InterruptedException e) {
                 System.out.println("拉取镜像异常");
                 throw new RuntimeException(e);
