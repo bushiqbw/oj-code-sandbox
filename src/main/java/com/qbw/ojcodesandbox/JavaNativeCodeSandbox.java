@@ -129,7 +129,7 @@ public class JavaNativeCodeSandbox implements CodeSandbox{
         // 5. 文件清理
         if(FileUtil.exist(userCodeParentPath)){
             boolean del = FileUtil.del(userCodeParentPath);
-            System.out.println("删除成功！");
+            System.out.println("删除" + (del ? "成功" : "失败"));
         }
 
         return executeCodeResponse;
