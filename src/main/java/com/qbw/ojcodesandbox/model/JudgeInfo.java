@@ -2,12 +2,16 @@
 package com.qbw.ojcodesandbox.model;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 题目用例
  */
+@NoArgsConstructor
 @Data
+@AllArgsConstructor
 public class JudgeInfo {
 
     /**

@@ -1,9 +1,11 @@
 package com.qbw.ojcodesandbox.controller;
 
 
-import com.qbw.ojcodesandbox.JavaNativeCodeSandbox;
+import com.qbw.ojcodesandbox.Factory.SandboxFactory;
 import com.qbw.ojcodesandbox.model.ExecuteCodeRequest;
 import com.qbw.ojcodesandbox.model.ExecuteCodeResponse;
+import com.qbw.ojcodesandbox.service.CodeSandbox;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,8 +22,10 @@ public class MainController {
 
     private static final String AUTH_REQUEST_SECRET = "secretKey";
 
-    @Resource
-    private JavaNativeCodeSandbox javaNativeCodeSandbox;
+    @GetMapping("/health")
+    public String health() {
+        return "ok";
+    }
 
     /**
      * 执行代码
@@ -41,7 +45,9 @@ public class MainController {
         if (executeCodeRequest == null) {
             throw new RuntimeException("请求参数为空");
         }
-        return javaNativeCodeSandbox.executeCode(executeCodeRequest);
+        String language = executeCodeRequest.getLanguage();
+        CodeSandbox sandbox = SandboxFactory.getSandbox(language);
+        return sandbox.executeCode(executeCodeRequest);
     }
 
 

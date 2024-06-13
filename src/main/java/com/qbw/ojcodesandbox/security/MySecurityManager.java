@@ -14,7 +14,7 @@ public class MySecurityManager extends SecurityManager {
     // 检测程序是否可执行文件
     @Override
     public void checkExec(String cmd) {
-        throw new SecurityException("checkExec 权限异常：" + cmd);
+//        throw new SecurityException("checkExec 权限异常：" + cmd);
     }
 
     // 检测程序是否允许读文件
@@ -22,7 +22,7 @@ public class MySecurityManager extends SecurityManager {
     @Override
     public void checkRead(String file) {
         System.out.println(file);
-        if (file.contains("C:\\code\\yuoj-code-sandbox")) {
+        if (file.contains("C:\\code\\oj-code-sandbox")) {
             return;
         }
 //        throw new SecurityException("checkRead 权限异常：" + file);

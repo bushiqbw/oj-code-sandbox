@@ -1,4 +1,4 @@
-package com.qbw.ojcodesandbox;
+package com.qbw.ojcodesandbox.service.java;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
@@ -7,6 +7,7 @@ import com.qbw.ojcodesandbox.model.ExecuteCodeRequest;
 import com.qbw.ojcodesandbox.model.ExecuteCodeResponse;
 import com.qbw.ojcodesandbox.model.ExecuteMessage;
 import com.qbw.ojcodesandbox.model.JudgeInfo;
+import com.qbw.ojcodesandbox.service.CodeSandbox;
 import com.qbw.ojcodesandbox.utils.ProcessUtils;
 
 import java.io.File;
@@ -17,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-public class JavaNativeCodeSandboxOld implements CodeSandbox{
+public class JavaNativeCodeSandboxOld implements CodeSandbox {
 
     private static final String GLOBAL_CODE_DIR_NAME = "tmpCode";
 
