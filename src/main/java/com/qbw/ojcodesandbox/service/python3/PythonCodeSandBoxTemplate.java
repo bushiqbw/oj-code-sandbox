@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.qbw.ojcodesandbox.constant.CodeBlackList.SENSITIVE_WORD_LIST;
+import static com.qbw.ojcodesandbox.constant.CodeBlackList.PYTHON_BLACK_LIST;
 
 @Slf4j
 @Component
@@ -53,7 +53,7 @@ public abstract class PythonCodeSandBoxTemplate extends CommonCodeSandBox implem
 
     static {
         WORD_TREE = new WordTree();
-        WORD_TREE.addWords(SENSITIVE_WORD_LIST);
+        WORD_TREE.addWords(PYTHON_BLACK_LIST);
     }
 
     @Override
