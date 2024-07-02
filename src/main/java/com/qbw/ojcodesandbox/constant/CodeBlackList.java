@@ -96,7 +96,7 @@ public interface CodeBlackList {
             "os.environ['SOME_VAR']", "os.putenv('SOME_VAR', 'value')",
 
             // 不安全的输入
-            "input", "raw_input",
+            "raw_input",
 
             // 不安全的字符串拼接
             "eval(f'expr {var}')", "var = var1 + var2",

@@ -81,7 +81,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.qbw.ojcodesandbox.OjCodeSandboxApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
